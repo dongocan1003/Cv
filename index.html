@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="UTF-8" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wooder</title>
+
+    <!-- Main Meta Tag -->
+    <meta name="title" content="Wooder" />
+    <meta name="description" content="Dự án Wooder" />
+    <meta name="keyword" content="wooder" />
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="canonical" href="" />
+    <!-- Add Domain Into Href HERE When Had Domain-->
+
+    <!-- Facebook Meta Tag -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter Meta Tag -->
+    <meta name="twitter:card" content="" />
+    <meta name="twitter:site" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="" />
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="./dest/style.min.css" />
+
+    <!-- Link Fonts -->
+    <link rel="stylesheet" href="./dest/fonts.css" />
+
+    <!-- Loading Page -->
+    <style>
+      .loading {
+        z-index: 999;
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: #000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .loading .loading-line {
+        width: 160px;
+        height: 4px;
+        background-color: var(--white-cl);
+        position: relative;
+      }
+
+      .loading .loading-line div {
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: var(--main-cl);
+      }
+
+      .loading .loading-number {
+        color: var(--white-cl);
+      }
+
+      .loading.--done {
+        /* opacity: 0;
+        visibility: hidden; */
+        transform: translateY(-100%);
+        transition-timing-function: cubic-bezier(0.53, 0.9, 0.59, 0.25);
+        transition: 0.5s;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Loading Page ===== -->
+    <div class="loading">
+      <div class="loading-line"><div></div></div>
+      <div class="loading-number">0%</div>
+    </div>
+
+    <!-- ===== Page Percent ===== -->
+    <div class="progress-bar">
+      <div class="percent"></div>
+    </div>
+
+    <!-- ===== Cursor Follow Mouse ===== -->
+    <div class="cursor"></div>
+
+    <!-- ===== Popup Video ===== -->
+    <div class="popup__video --hide">
+      <!-- <div class="popup-video-overlay"></div> -->
+      <div class="popup__video-inner">
+        <div class="popup__video-inner--src">
+          <iframe
+            width="100%"
+            height="100%"
+            src=""
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <div class="popup__video-close">
+            <i><img src="./img/icon-times.svg" alt="" /></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Header ===== -->
+    <header>
+      <div class="container-fluid">
+        <!-- Header logo -->
+        <a class="header__logo" href="./">
+          <img srcset="./img/logo_wooder.png 2x" alt="" />
+          <h1>Wooder</h1>
+        </a>
+
+        <!-- Nav Menu -->
+        <ul class="header__menu">
+          <li><a href="#slider">HOME</a></li>
+          <li><a href="#product">PRODUCTS</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#gallery">GALLERY</a></li>
+          <li><a href="#news">NEWS</a></li>
+        </ul>
+
+        <div class="header__right">
+          <!-- Header Languages -->
+          <div class="header__languages">
+            <span class="lang-current">EN</span>
+            <div class="select">
+              <div class="option">VN</div>
+              <div class="option">JP</div>
+              <div class="option">AU</div>
+            </div>
+            <div class="select-icon">
+              <img src="./img/icon-drop.svg" alt="" />
+            </div>
+          </div>
+
+          <!-- Menu Button -->
+          <div class="btnmenu"><span></span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== Main ===== -->
+    <main>
+      <!-- === Slider Hero === -->
+      <section class="slider">
+        <!-- Slider Moving -->
+        <div class="slider__item-wrap">
+          <!-- Slider Item 1 -->
+          <div class="slider__item">
+            <div class="slider__item-text">
+              <h2 class="heading --h1 --disable-select">WOODER</h2>
+              <a href="#" class="btn btnmain"
+                >LEARN MORE <i><img src="./img/icon-arrow-next.svg" alt="" /></i
+              ></a>
+            </div>
+            <picture class="slider__item-img">
+              <source
+                media="(max-width: 576px)"
+                srcset="./img/hero_wooder1-m.jpg 1.5x"
+              />
+              <img srcset="./img/hero_wooder1.jpg 1.5x" alt="" />
+            </picture>
+          </div>
+
+          <!-- Slider Item 2 -->
+          <div class="slider__item">
+            <div class="slider__item-text">
+              <h2 class="heading --h1 --disable-select">WOODER 2</h2>
+              <a href="#" class="btn btnmain"
+                >LEARN MORE <i><img src="./img/icon-arrow-next.svg" alt="" /></i
+              ></a>
+            </div>
+            <picture class="slider__item-img">
+              <source
+                media="(max-width: 576px)"
+                srcset="./img/hero_wooder2-m.jpg 1.5x"
+              />
+              <img srcset="./img/hero_wooder2.jpg 1.5x" alt="" />
+            </picture>
+          </div>
+
+          <!-- Slider Item 3 -->
+          <div class="slider__item">
+            <div class="slider__item-text">
+              <h2 class="heading --h1 --disable-select">WOODER 3</h2>
+              <a href="#" class="btn btnmain"
+                >LEARN MORE <i><img src="./img/icon-arrow-next.svg" alt="" /></i
+              ></a>
+            </div>
+            <picture class="slider__item-img">
+              <source
+                media="(max-width: 576px)"
+                srcset="./img/hero_wooder3-m.jpg 1.5x"
+              />
+              <img srcset="./img/hero_wooder3.jpg 1.5x" alt="" />
+            </picture>
+          </div>
+        </div>
+
+        <!-- Slider Fixed -->
+        <div class="slider__bottom">
+          <div class="container-fluid">
+            <!-- Slider Page -->
+            <div class="slider__bottom-paging">
+              <div class="slider__bottom-paging--current">01</div>
+              <div class="slider__bottom-paging--total">/03</div>
+              <div class="dotted">
+                <ol>
+                  <li class="--active"></li>
+                  <li></li>
+                  <li></li>
+                </ol>
+              </div>
+            </div>
+
+            <!-- Slider Mouse -->
+            <div class="slider__bottom-mouse">
+              <div class="mouse">
+                <i> <img src="./img/icon-mouse.svg" alt="" /></i>
+              </div>
+              <div class="arrow">
+                <i> <img src="./img/icon-arrow-down.svg" alt="" /></i>
+              </div>
+            </div>
+
+            <!-- Slider Control -->
+            <div class="slider__bottom-control">
+              <div class="btnctrl prev">
+                <i><img src="./img/icon-arrow-next.svg" alt="" /></i>
+              </div>
+              <div class="btnctrl next">
+                <i><img src="./img/icon-arrow-next.svg" alt="" /></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === Product === -->
+      <section class="product">
+        <div class="container">
+          <div class="product__list">
+            <!-- Product 1 -->
+            <div class="product__item">
+              <div class="textbox --left --line">
+                <h2 class="heading --h2">FURNITURE</h2>
+                <p class="desc">
+                  Wooder utilizes materials otherwise left behind, rendered
+                  useless in their original intent. By creating new pieces made
+                  o.rerclaimed barnwood
+                </p>
+                <a href="#" class="btn">
+                  <span> LEARN MORE</span>
+                  <div class="arrow">
+                    <i> <img src="./img/icon-arrow-next-brown.svg" alt="" /></i>
+                  </div>
+                </a>
+              </div>
+              <div class="product-img">
+                <img src="./img/product_wooder1.jpg" alt="" />
+              </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product__item">
+              <div class="textbox --right --line">
+                <h2 class="heading --h2">DECOR</h2>
+                <p class="desc">
+                  We make all types of wooden decor as per design given by
+                  Architect,Interior designer, contractor which is suitable your
+                  premises.
+                </p>
+                <a href="#" class="btn">
+                  <span> LEARN MORE</span>
+                  <div class="arrow">
+                    <i> <img src="./img/icon-arrow-next-brown.svg" alt="" /></i>
+                  </div>
+                </a>
+              </div>
+              <div class="product-img">
+                <img src="./img/product_wooder2.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === Video === -->
+      <section class="video">
+        <div class="container">
+          <div class="textbox --center">
+            <h2 class="heading --h2">WOODER &#8208; IS QUALITY</h2>
+            <p class="desc">
+              Wooder utilizes materials otherwise left behind, rendered useless
+              in their original intent. By creating new pieces made rerclaimed
+              barnwood rendered useless in their original intent.
+            </p>
+          </div>
+
+          <div class="video__list">
+            <!-- Video 1 -->
+            <div class="video__item">
+              <div class="video__item-play" data-ytb="ZevJUwmiO4U">
+                <div class="video__item-play--thumb">
+                  <img src="./img/video_wooder1.jpg" alt="" />
+                </div>
+                <div class="video__item-play--btn">
+                  <i> <img src="./img/icon-play-btn.svg" alt="" /></i>
+                </div>
+              </div>
+              <div class="video__item-desc">
+                <h3 class="heading --h3">Innovative Design</h3>
+              </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="video__item">
+              <div class="video__item-play" data-ytb="Yo3j_Dx4u7c">
+                <div class="video__item-play--thumb">
+                  <img src="./img/video_wooder2.jpg" alt="" />
+                </div>
+                <div class="video__item-play--btn">
+                  <i> <img src="./img/icon-play-btn.svg" alt="" /></i>
+                </div>
+              </div>
+              <div class="video__item-desc">
+                <h3 class="heading --h3">High&#8208;level Skills</h3>
+              </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="video__item">
+              <div class="video__item-play" data-ytb="mC1LQlzOig8">
+                <div class="video__item-play--thumb">
+                  <img src="./img/video_wooder3.jpg" alt="" />
+                </div>
+                <div class="video__item-play--btn">
+                  <i><img src="./img/icon-play-btn.svg" alt="" /></i>
+                </div>
+              </div>
+              <div class="video__item-desc">
+                <h3 class="heading --h3">Quality Products</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === Banner === -->
+      <section
+        class="banner"
+        style="background-image: url(./img/banner_wooder.jpg)"
+      >
+        <div class="banner-overlay"></div>
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">WE DO THE DESIGN OF ANY COMPLEXITY</h2>
+            <p class="desc">
+              Wooder utilizes materials otherwise left behind, rendered useless
+              in their original intent. By creating new pieces made o.rerclaimed
+              barnwood
+            </p>
+          </div>
+
+          <div class="banner__btn btn btnmain">
+            <i> <img src="./img/icon-play-circle-btn.svg" alt="" /></i>
+            WATCH VIDEO
+          </div>
+        </div>
+      </section>
+
+      <!-- === About Us === -->
+      <section class="about">
+        <div class="container">
+          <div class="about__img">
+            <img src="./img/about_wooder.jpg" alt="" />
+          </div>
+
+          <div class="textbox --left --line">
+            <h2 class="heading --h2">ABOUT US</h2>
+            <p class="desc">
+              We are a team of professionals in the wood processing and the
+              creation of wooden lorem.of the highest class.
+            </p>
+
+            <a class="btn" href="#">
+              <span>LEARN MORE</span>
+              <div class="arrow">
+                <i> <img src="./img/icon-arrow-next-brown.svg" alt="" /></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- === Gallery === -->
+      <section class="gallery">
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">GALLERY</h2>
+            <p class="desc">
+              We are a team of professionals in the wood processing and the
+              creation of wooden furniture of the highest class
+            </p>
+          </div>
+
+          <div class="gallery__list">
+            <a
+              class="gallery__item"
+              data-fancybox="images"
+              href="./img/gallery_wooder1.jpg"
+            >
+              <img src="./img/gallery_wooder1-thumb.jpg" alt="" />
+            </a>
+            <a
+              class="gallery__item"
+              data-fancybox="images"
+              href="./img/gallery_wooder2.jpg"
+            >
+              <img src="./img/gallery_wooder2-thumb.jpg" alt="" />
+            </a>
+            <a
+              class="gallery__item"
+              data-fancybox="images"
+              href="./img/gallery_wooder3.jpg"
+            >
+              <img src="./img/gallery_wooder3-thumb.jpg" alt="" />
+            </a>
+            <a
+              class="gallery__item"
+              data-fancybox="images"
+              href="./img/gallery_wooder4.jpg"
+            >
+              <img src="./img/gallery_wooder4-thumb.jpg" alt="" />
+            </a>
+            <a
+              class="gallery__item"
+              data-fancybox="images"
+              href="./img/gallery_wooder5.jpg"
+            >
+              <img src="./img/gallery_wooder5-thumb.jpg" alt="" />
+            </a>
+          </div>
+        </div>
+        <!-- <div class="gallery__popup-list">
+          <div class="gallery__popup-overlay"></div>
+          <div class="gallery__popup-close">
+            <i><img src="./img/icon-times.svg" alt="" /></i>
+          </div>
+          <div class="gallery__popup-item">
+            <img src="./img/gallery_wooder1.jpg" alt="" />
+          </div>
+          <div class="gallery__popup-item">
+            <img src="./img/gallery_wooder2.jpg" alt="" />
+          </div>
+          <div class="gallery__popup-item">
+            <img src="./img/gallery_wooder3.jpg" alt="" />
+          </div>
+          <div class="gallery__popup-item">
+            <img src="./img/gallery_wooder4.jpg" alt="" />
+          </div>
+          <div class="gallery__popup-item">
+            <img src="./img/gallery_wooder5.jpg" alt="" />
+          </div>
+        </div> -->
+      </section>
+
+      <!-- === News === -->
+      <section class="news">
+        <div class="container">
+          <div class="textbox">
+            <h2 class="heading --h2">NEWS</h2>
+            <p class="desc">
+              We are a team of professionals in the wood processing and the
+              creation of wooden furniture of the highest class
+            </p>
+          </div>
+
+          <div class="news__btns">
+            <div class="news__btn --active">ALL</div>
+            <div class="news__btn">TECHNOLOGY</div>
+            <div class="news__btn">FASHION</div>
+          </div>
+
+          <div class="news__lists">
+            <div class="news__list --active">
+              <!-- News Item 1 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder1.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">Where does it come from?</h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 2 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder2.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      There are many variations of passages
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 3 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder3.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      It is a long established fact that a reader
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="news__list">
+              <!-- News Item 1 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder2.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">Where does it come from?</h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 2 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder1.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      It is a long established fact that a reader
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 3 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder3.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      There are many variations of passages
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="news__list">
+              <!-- News Item 1 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder1.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      There are many variations of passages
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 2 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder3.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">Where does it come from?</h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Item 3 -->
+              <div class="article">
+                <a href="#" target="_blank" class="article-img">
+                  <img src="./img/news_wooder2.jpg" alt="" />
+                </a>
+
+                <div class="article-content">
+                  <a href="#" target="_blank" class="article--title">
+                    <h3 class="heading --h3">
+                      It is a long established fact that a reader
+                    </h3></a
+                  >
+                  <p class="article--desc">
+                    Contrary to popular belief, Lorem Ipsum is not simply random
+                    text. It has roots in a piece of classical Latin literatur
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === Carousel === -->
+      <section class="carousel">
+        <div class="carousel__list">
+          <img src="./img/carousel_wooder1.jpg" alt="" />
+          <img src="./img/carousel_wooder2.jpg" alt="" />
+          <img src="./img/carousel_wooder3.jpg" alt="" />
+          <img src="./img/carousel_wooder4.jpg" alt="" />
+          <img src="./img/carousel_wooder1.jpg" alt="" />
+          <img src="./img/carousel_wooder2.jpg" alt="" />
+          <img src="./img/carousel_wooder3.jpg" alt="" />
+          <img src="./img/carousel_wooder4.jpg" alt="" />
+        </div>
+
+        <div class="carousel__progress"><div></div></div>
+      </section>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <div class="container">
+        <div class="footer__copy">&#169; 2023 WOODER, CFD Circle</div>
+        <a class="footer__logo" href="./">
+          <img srcset="./img/logo_wooder.png 2x" alt="" />
+        </a>
+        <a class="footer__btn"
+          ><img src="./img/icon-arrow-next.svg" alt=""
+        /></a>
+      </div>
+    </footer>
+
+    <!-- Link JS -->
+    <script src="./dest/jsmain.min.js"></script>
+    <script src="./dest/main.js"></script>
+  </body>
+</html>

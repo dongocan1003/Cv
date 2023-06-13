@@ -1,0 +1,209 @@
+// Align Center Item
+@mixin midflex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin evenflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin sbflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin midcol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin midcol-rev {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin midabs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Padding Left, Right
+@mixin padlr {
+  padding-left: var(--gap);
+  padding-right: var(--gap);
+}
+
+// Image
+@mixin imgscale {
+  transform: scale(1.05);
+}
+
+@mixin imgcover($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin imgcontain($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+  object-fit: contain;
+  object-position: center;
+}
+
+// Limit Line And Add 3 Dots
+@mixin threedots($line) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Text Button
+@mixin textbtn {
+  font-size: 1.5rem;
+  font-family: pb;
+  line-height: normal;
+  letter-spacing: 0.1em;
+}
+
+@mixin textbtn-m {
+  font-size: 1.2rem;
+  font-family: pb;
+  line-height: normal;
+  letter-spacing: 0.1em;
+}
+
+// Body Text
+@mixin bodytext {
+  font-family: pr;
+  font-size: var(--fs-bodytext);
+  line-height: var(--lh-bodytext);
+  letter-spacing: var(--ls-bodytext);
+  color: var(--gray-cl);
+}
+
+@mixin bodytext-m {
+  font-family: pr;
+  font-size: var(--fs-bodytext-m);
+  line-height: var(--lh-bodytext-m);
+  letter-spacing: var(--ls-bodytext-m);
+  color: var(--gray-cl);
+}
+
+@mixin bodytext-small {
+  font-family: pr;
+  font-size: var(--fs-bodytext-small);
+  line-height: var(--lh-bodytext-small);
+  letter-spacing: var(--ls-bodytext-small);
+  color: var(--gray-cl);
+}
+
+// Heading
+@mixin headingh1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh1-m {
+  font-size: var(--fs-h1-m);
+  line-height: var(--lh-h1-m);
+  letter-spacing: var(--ls-h1-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh2-m {
+  font-size: var(--fs-h2-m);
+  line-height: var(--lh-h2-m);
+  letter-spacing: var(--ls-h2-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+@mixin headingh3-m {
+  font-size: var(--fs-h3-m);
+  line-height: var(--lh-h3-m);
+  letter-spacing: var(--ls-h3-m);
+  font-family: pb;
+  color: var(--black-cl);
+  text-transform: uppercase;
+}
+
+// Hide - Unhide
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin unhide {
+  opacity: 1;
+  visibility: visible;
+}
+
+// Media Query
+@mixin lg {
+  @media screen and (max-width: $lg-max) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media screen and (max-width: $md-max) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media screen and (max-width: $sm-max) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: $xs-max) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media screen and (max-width: $xxs-max) {
+    @content;
+  }
+}
